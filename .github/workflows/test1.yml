@@ -22,12 +22,16 @@ env:
 
 jobs:
   test:
-    - name: Run Test
-      run: |
-        echo "hello world"
-        echo "run test1 test"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: |
+          echo "hello world"
+          echo "run test1 test"
 
   build:
-    - name: Run Build
-      run: |
-        echo "run test1 build"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Build
+        run: |
+          echo "run test1 build"
