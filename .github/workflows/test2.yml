@@ -1,0 +1,36 @@
+name: TEST2 CI & CD
+on:
+  push:
+    paths:
+      - 'test2/**'
+      - '.github/workflows/test2.yml'
+    branches:
+      - 'develop-test2'
+      - 'release-test2'
+  pull_request:
+    paths:
+      - 'test2/**'
+      - '.github/workflows/test2.yml'
+    branches:
+      - 'develop-test2'
+      - 'release-test2'    
+
+env:
+  SERVICE_NAME: app
+  BRANCH: ${GITHUB_REF##*/}
+  IMAGE_TAG: ${GITHUB_REF##*/}_${GITHUB_SHA::6}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: |
+          echo "run test2 test"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Build
+        run: |
+          echo "run test2 build"
