@@ -29,4 +29,5 @@ jobs:
 
   build:
     - name: Run Build
-      run: echo "run test1 build"
+      run: |
+        echo "run test1 build"
