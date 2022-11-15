@@ -13,7 +13,7 @@ on:
       - '.github/workflows/test1.yml'
     branches:
       - 'develop-test1'
-      - 'release-test1'    
+      - '!release-test1'    
 
 env:
   SERVICE_NAME: app
