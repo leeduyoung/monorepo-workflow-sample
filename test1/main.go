@@ -11,4 +11,5 @@ func main() {
 	fmt.Println("add signup")
 	fmt.Println("release deploy")
 	fmt.Println("release deploy 2")
+	fmt.Println("release deploy 3")
 }
