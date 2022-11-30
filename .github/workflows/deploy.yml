@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Run Test
         run: |
+          echo ${{ env.BRANCH }}
           echo "run test1 test"
 
   build:
