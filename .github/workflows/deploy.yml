@@ -29,6 +29,7 @@ jobs:
   develop-deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
     steps:
       - name: Run Build
         run: |
@@ -37,6 +38,7 @@ jobs:
   release-deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/release'
     steps:
       - name: Run Build
         run: |
