@@ -8,4 +8,5 @@ func main() {
 	fmt.Println("say hello test 3")
 	fmt.Println("say hello test 4")
 	fmt.Println("say hello test 5")
+	fmt.Println("add signup")
 }
