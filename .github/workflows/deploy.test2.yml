@@ -1,4 +1,4 @@
-name: deploy workflow
+name: deploy test2 workflow
 on:
   push:
     tags:
@@ -18,7 +18,7 @@ jobs:
         run: |
           echo ${{ env.BRANCH }}
           echo ${{ github.ref }}
-          echo "run test1 test"
+          echo "run test2 test"
 
   build:
     needs: test
@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Run Build
         run: |
-          echo "run test1 build"
+          echo "run test2 build"
 
   develop-deploy:
     needs: build
@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: Run Build
         run: |
-          echo "run test1 develop deploy"  
+          echo "run test2 develop deploy"  
 
   release-deploy:
     needs: build
@@ -44,4 +44,4 @@ jobs:
     steps:
       - name: Run Build
         run: |
-          echo "run test1 release deploy"
+          echo "run test2 release deploy"
