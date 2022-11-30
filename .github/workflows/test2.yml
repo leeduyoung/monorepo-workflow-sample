@@ -8,8 +8,8 @@ on:
       - 'develop'
       - 'release'
     tags-ignore:
-      - 'develop-test2-v*'
-      - 'release-test2-v*'
+      - 'develop-**'
+      - 'release-**'
   pull_request:
     paths:
       - 'test2/**'
