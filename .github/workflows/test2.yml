@@ -1,19 +1,19 @@
-name: TEST2 CI & CD
+name: TEST2 workflow
 on:
   push:
     paths:
       - 'test2/**'
       - '.github/workflows/test2.yml'
     branches:
-      - 'develop-test2'
-      - 'release-test2'
+      - 'develop'
+      - 'release'
+    tags-ignore:
+      - 'develop-**'
+      - 'release-**'
   pull_request:
     paths:
       - 'test2/**'
       - '.github/workflows/test2.yml'
-    branches:
-      - 'develop-test2'
-      - '!release-test2'    
 
 env:
   SERVICE_NAME: app

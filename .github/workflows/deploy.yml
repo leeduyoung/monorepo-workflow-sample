@@ -1,0 +1,47 @@
+name: deploy workflow
+on:
+  push:
+    tags:
+      - 'develop-test1-v*'
+      - 'release-test1-v*'
+
+env:
+  SERVICE_NAME: app
+  BRANCH: ${GITHUB_REF##*/}
+  IMAGE_TAG: ${GITHUB_REF##*/}_${GITHUB_SHA::6}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: |
+          echo ${{ env.BRANCH }}
+          echo ${{ github.ref }}
+          echo "run test1 test"
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Build
+        run: |
+          echo "run test1 build"
+
+  develop-deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/develop')
+    steps:
+      - name: Run Build
+        run: |
+          echo "run test1 develop deploy"  
+
+  release-deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/release')
+    steps:
+      - name: Run Build
+        run: |
+          echo "run test1 release deploy"

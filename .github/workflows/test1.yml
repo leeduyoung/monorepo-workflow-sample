@@ -1,19 +1,19 @@
-name: TEST1 CI & CD
+name: TEST1 workflow
 on:
   push:
     paths:
       - 'test1/**'
       - '.github/workflows/test1.yml'
     branches:
-      - 'develop-test1'
-      - 'release-test1'
+      - 'develop'
+      - 'release'
+    tags-ignore:
+      - 'develop-**'
+      - 'release-**'
   pull_request:
     paths:
       - 'test1/**'
       - '.github/workflows/test1.yml'
-    branches:
-      - 'develop-test1'
-      - '!release-test1'    
 
 env:
   SERVICE_NAME: app
@@ -26,7 +26,6 @@ jobs:
     steps:
       - name: Run Test
         run: |
-          echo "hello world"
           echo "run test1 test"
 
   build:
