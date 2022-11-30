@@ -7,13 +7,13 @@ on:
     branches:
       - 'develop'
       - 'release'
+    tags-ignore:
+      - 'develop-test2-v*'
+      - 'release-test2-v*'
   pull_request:
     paths:
       - 'test2/**'
       - '.github/workflows/test2.yml'
-  tags-ignore:
-    - 'develop-test2-v*'
-    - 'release-test2-v*'
 
 env:
   SERVICE_NAME: app
