@@ -1,12 +1,6 @@
 name: deploy workflow
 on:
   push:
-    paths:
-      - 'test1/**'
-      - '.github/workflows/test1.yml'
-    branches:
-      - 'develop'
-      - 'release'
     tags:
       - 'develop-test1-v*'
       - 'release-test1-v*'
