@@ -6,4 +6,6 @@ func main() {
 	fmt.Println("say hello test 2")
 
 	fmt.Println("add login")
+
+	fmt.Println("release deploy")
 }
