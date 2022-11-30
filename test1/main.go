@@ -10,4 +10,5 @@ func main() {
 	fmt.Println("say hello test 5")
 	fmt.Println("add signup")
 	fmt.Println("release deploy")
+	fmt.Println("release deploy 2")
 }
