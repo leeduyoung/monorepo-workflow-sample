@@ -1,9 +1,9 @@
-name: TEST2 workflow
+name: serviceA test workflow
 on:
   push:
     paths:
-      - 'test2/**'
-      - '.github/workflows/test2.yml'
+      - 'serviceA/**'
+      - '.github/workflows/serviceA.yml'
     branches:
       - 'develop'
       - 'release'
@@ -12,8 +12,8 @@ on:
       - 'release-**'
   pull_request:
     paths:
-      - 'test2/**'
-      - '.github/workflows/test2.yml'
+      - 'serviceA/**'
+      - '.github/workflows/serviceA.yml'
     branches-ignore:
       - "release"
 
@@ -28,11 +28,11 @@ jobs:
     steps:
       - name: Run Test
         run: |
-          echo "run test2 test"
+          echo "run serviceA test"
 
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Run Build
         run: |
-          echo "run test2 build"
+          echo "run serviceA build"

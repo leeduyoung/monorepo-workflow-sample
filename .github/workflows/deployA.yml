@@ -1,9 +1,9 @@
-name: deploy workflow
+name: serviceA deploy workflow
 on:
   push:
     tags:
-      - 'develop-test1-v*'
-      - 'release-test1-v*'
+      - 'develop-serviceA-v*'
+      - 'release-serviceA-v*'
 
 env:
   SERVICE_NAME: app
@@ -18,7 +18,7 @@ jobs:
         run: |
           echo ${{ env.BRANCH }}
           echo ${{ github.ref }}
-          echo "run test1 test"
+          echo "run serviceA test"
 
   build:
     needs: test
@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Run Build
         run: |
-          echo "run test1 build"
+          echo "run serviceA build"
 
   develop-deploy:
     needs: build
@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: Run Build
         run: |
-          echo "run test1 develop deploy"  
+          echo "run serviceA develop deploy"  
 
   release-deploy:
     needs: build
@@ -44,4 +44,4 @@ jobs:
     steps:
       - name: Run Build
         run: |
-          echo "run test1 release deploy"
+          echo "run serviceA release deploy"

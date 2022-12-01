@@ -1,0 +1,38 @@
+name: serviceC test workflow
+on:
+  push:
+    paths:
+      - 'serviceC/**'
+      - '.github/workflows/serviceC.yml'
+    branches:
+      - 'develop'
+      - 'release'
+    tags-ignore:
+      - 'develop-**'
+      - 'release-**'
+  pull_request:
+    paths:
+      - 'serviceC/**'
+      - '.github/workflows/serviceC.yml'
+    branches-ignore:
+      - "release"
+
+env:
+  SERVICE_NAME: app
+  BRANCH: ${GITHUB_REF##*/}
+  IMAGE_TAG: ${GITHUB_REF##*/}_${GITHUB_SHA::6}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Test
+        run: |
+          echo "run serviceC test"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Build
+        run: |
+          echo "run serviceC build"
