@@ -3,9 +3,6 @@ package test2
 import "fmt"
 
 func main() {
-	fmt.Println("say hello test 2")
-
+	fmt.Println("started serviceB..")
 	fmt.Println("add login")
-
-	fmt.Println("release deploy")
 }
